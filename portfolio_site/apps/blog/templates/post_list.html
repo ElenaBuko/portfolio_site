@@ -1,0 +1,11 @@
+<h1>Posts</h1>
+<a href='{% url "blog:create" %}'>Add new</a>
+
+<ul>
+    {% for post in object_list %}
+        <li>
+            {{ post.title }} / {{ post.created }} : {{ post.is_draft }} <br>
+            {{ post.content }}
+        </li>
+    {% endfor %}
+</ul>
