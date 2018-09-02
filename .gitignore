@@ -3,6 +3,7 @@
 *.pdf
 **/__pycache__
 **/*.pyc
+**/*.log
 **/creds
 **/staticfiles
 /venv

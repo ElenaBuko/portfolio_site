@@ -1,11 +1,18 @@
 <h1>Posts</h1>
-<a href='{% url "blog:create" %}'>Add new</a>
+<a href='{% url "blog:create" %}'>Add post</a>
 
-<ul>
+<div>
     {% for post in object_list %}
-        <li>
-            {{ post.title }} / {{ post.created }} : {{ post.is_draft }} <br>
+    <div class='post'>
+        <div class='post-title'>
+            {{ post.title }}
+        </div>
+        <div class='post-content'>
+            <div class='post-options'>
+                {{ post.created }} : {{ post.is_draft }}
+            </div>
             {{ post.content }}
-        </li>
+        </div>
+    </div>
     {% endfor %}
-</ul>
+</div>
