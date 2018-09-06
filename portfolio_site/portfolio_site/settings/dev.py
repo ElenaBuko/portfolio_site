@@ -20,3 +20,5 @@ LOGGING = {
         }
     }
 }
+
+SERVE_MEDIA = True

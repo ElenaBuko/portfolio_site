@@ -1,5 +1,5 @@
-<h1>Add Post</h1>
-
+{% extends 'index.html' %}
+{% block content %}
 <form action="{% url 'blog:create' %}" method="POST">
     {% csrf_token %}
     <ul>
@@ -9,3 +9,4 @@
 </form>
 
 <a href="{% url 'blog:index' %}">back to list</a>
+{% endblock content %}
