@@ -1,24 +1,19 @@
 {% extends 'index.html' %}
 {% block content %}
-<h1>Posts</h1>
 <a href='{% url "blog:post-create" %}'>Add post</a>
 
-<div>
-    {% for post in object_list %}
-    <div class='post'>
-        <div class='post-title'>
-            {{ post.title }}
+<div class='row'>
+    <div class='col-md-offset-3 col-md-6'>
+        {% for post in object_list %}
+        <h4>{{ post.title }}</h4>
+        <div>
+            {{ post.created }} {{ post.is_draft }}
+            (<a href='{% url "blog:post-detail" pk=post.id %}'>detail</a>
+            <a href='{% url "blog:post-edit" pk=post.id %}'>edit</a>
+            <a href='{% url "blog:post-delete" pk=post.id %}'>delete</a>)
         </div>
-        <div class='post-content'>
-            <div class='post-options'>
-                {{ post.created }} : {{ post.is_draft }}
-                (<a href='{% url "blog:post-detail" pk=post.id %}'>detail</a>
-                <a href='{% url "blog:post-edit" pk=post.id %}'>edit</a>
-                <a href='{% url "blog:post-delete" pk=post.id %}'>delete</a>)
-            </div>
-            {{ post.content }}
-        </div>
+        <p>{{ post.content }}</p>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock content %}

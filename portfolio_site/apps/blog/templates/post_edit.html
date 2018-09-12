@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
-<form action="{% url 'blog:post-create' %}" method="POST">
+<form action="{{ action }}" method="POST">
     {% csrf_token %}
     <ul>
         {{ form.as_ul }}
