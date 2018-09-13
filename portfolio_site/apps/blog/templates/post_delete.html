@@ -1,11 +1,8 @@
 {% extends 'index.html' %}
-
 {% block content %}
 
-<h1>Delete Contact</h1>
-
-<p>Are you sure you want to delete the contact {{ post }}?</p>
-
+<h1>Delete Post</h1>
+<p>Are you sure you want to delete the post {{ post }}?</p>
 <form action='{% url "blog:post-delete" pk=post.id %}' method="POST">
     {% csrf_token %}
 
