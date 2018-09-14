@@ -7,6 +7,7 @@ from apps.blog.models import Post
 class ListPostView(ListView):
     model = Post
     template_name = 'post_list.html'
+    paginate_by = 2
 
 
 class CreatePostView(CreateView):
