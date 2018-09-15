@@ -27,6 +27,7 @@ pgdata_sentry
 htmlcov
 pgdata*
 .vagrant
+.DS_Store
 
 .env
 backups
@@ -37,3 +38,5 @@ experiments
 .coverage
 .deployment-env
 .ipynb_checkpoints
+
+todo
