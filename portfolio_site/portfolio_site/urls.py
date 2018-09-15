@@ -7,5 +7,6 @@ from portfolio_site.utils.utils import get_static_urls
 urlpatterns = [
     path('blog/', include('apps.blog.urls', namespace='blog')),
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls', namespace='api')),
 ]
 urlpatterns = urlpatterns + get_static_urls()
