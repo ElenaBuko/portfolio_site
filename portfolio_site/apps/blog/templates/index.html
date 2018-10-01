@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My awesome blog</title>
     <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.css'>
+    <!--<link rel='stylesheet' type='text/css' href='/static/css/styles_example.css'>-->
 </head>
 <body>
 <div class="container">
@@ -11,9 +12,15 @@
         <nav>
             <ul class="nav nav-pills pull-right">
                 <li role="presentation" class="active"><a href="{% url 'blog:index' %}">Home</a></li>
+                {% if request.user.is_authenticated %}
+                    <li role="presentation" class="active"><a href="{% url 'auth:logout' %}">Logout</a></li>
+                {% else %}
+                    <li role="presentation" class="active"><a href="{% url 'auth:login' %}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
         <h3 class="text-muted">My awesome site</h3>
+        <!--<h3 class="post-title">My awesome site</h3>-->
     </div>
 
     <div class="jumbotron">

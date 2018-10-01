@@ -10,7 +10,11 @@
             </form>
 
             {% for post in posts %}
-                <h4>{{ post.title }}</h4>
+                <h4>{{ post.title }}
+                        <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+                </h4>
                 <div>
                     {{ post.created }} {{ post.is_draft }}
                     (<a href='{% url "blog:post-detail" pk=post.id %}'>detail</a>

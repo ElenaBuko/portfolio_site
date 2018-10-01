@@ -1,9 +1,12 @@
 {% extends 'index.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
+
+
 <form action="{{ action }}" method="POST">
     {% csrf_token %}
     <ul>
-        {{ form.as_ul }}
+        {{ form|crispy }}
     </ul>
     <input id="save_post" type="submit" value="Save"/>
 </form>

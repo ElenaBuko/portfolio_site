@@ -19,3 +19,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Like(models.Model):
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=0)
