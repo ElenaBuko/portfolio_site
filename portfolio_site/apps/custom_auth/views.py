@@ -5,6 +5,7 @@ from django.views.generic.base import RedirectView
 from django.views.generic.edit import FormView
 
 from apps.custom_auth.forms import LoginForm
+from django.contrib.auth.forms import UserCreationForm
 
 
 class LoginView(FormView):
@@ -28,3 +29,7 @@ class LogoutView(RedirectView):
         if request.user.is_authenticated:
             logout(request)
         return redirect('/blog/')
+
+class RegistrationView(FormView):
+    template_name = 'registration.html'
+    form_class = UserCreationForm
