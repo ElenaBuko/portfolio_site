@@ -33,3 +33,12 @@ class LoginForm(forms.Form):
             if not user.is_active:
                 raise forms.ValidationError('This user is no longer active.')
         return super().clean(*args, **kwargs)
+
+
+class RegistrationForm(forms.ModelForm):
+    username = forms.CharField()
+    email = forms.CharField()
+    password = forms.CharField()
+    class Meta:
+        model = User
+        fields = ['username','email', 'password']
